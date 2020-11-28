@@ -1,8 +1,4 @@
-.highlight-error {
-    border-color: red;
-}
-
-
+/* aadhaar field */
 .adr {
     
     display: block;
@@ -13,3 +9,9 @@
     line-height: 1.42857143;
     border-radius: 4px;
 }
+
+/* aadhaar number error */
+.highlight-error {
+    border-color: red;
+}
+
