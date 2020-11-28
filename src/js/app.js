@@ -119,7 +119,7 @@ App = {
   }
 };
 
-//AADHAR NUMBER 
+//Aadhaar Field 
 $('[data-type="adhaar-number"]').keyup(function() {
   var value = $(this).val();
   value = value.replace(/\D/g, "").split(/(?:([\d]{4}))/g).filter(s => s.length > 0).join("-");
