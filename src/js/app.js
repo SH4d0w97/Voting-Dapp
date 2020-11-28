@@ -9,7 +9,7 @@ App = {
   },
 
   initWeb3: function() {
-    // TODO: refactor conditional
+    
     if (typeof web3 !== 'undefined') {
       // If a web3 instance is already provided by Meta Mask.
       App.web3Provider = web3.currentProvider;
@@ -38,9 +38,7 @@ App = {
   // Listen for events emitted from the contract
   listenForEvents: function() {
     App.contracts.Election.deployed().then(function(instance) {
-      // Restart Chrome if you are unable to receive this event
-      // This is a known issue with Metamask
-      // https://github.com/MetaMask/metamask-extension/issues/2393
+      
       instance.votedEvent({}, {
         fromBlock: 0,
         toBlock: 'latest'
@@ -120,6 +118,23 @@ App = {
     });
   }
 };
+
+//AADHAR NUMBER 
+$('[data-type="adhaar-number"]').keyup(function() {
+  var value = $(this).val();
+  value = value.replace(/\D/g, "").split(/(?:([\d]{4}))/g).filter(s => s.length > 0).join("-");
+  $(this).val(value);
+});
+
+$('[data-type="adhaar-number"]').on("change, blur", function() {
+  var value = $(this).val();
+  var maxLength = $(this).attr("maxLength");
+  if (value.length != maxLength) {
+    $(this).addClass("highlight-error");
+  } else {
+    $(this).removeClass("highlight-error");
+  }
+});
 
 $(function() {
   $(window).load(function() {
