@@ -130,9 +130,7 @@ $('[data-type="adhaar-number"]').on("change, blur", function() {
   var value = $(this).val();
   var maxLength = $(this).attr("maxLength");
   if (value.length != maxLength) {
-    $(this).addClass("highlight-error");
-  } else {
-    $(this).removeClass("highlight-error");
+    alert("Please enter 16 digit Aadhaar number");
   }
 });
 
