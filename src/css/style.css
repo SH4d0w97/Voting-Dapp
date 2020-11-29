@@ -10,11 +10,6 @@
     border-radius: 4px;
 }
 
-/* aadhaar number error */
-.highlight-error {
-    border-color: red;
-}
-
 /* vote button container */
 .votebtn {
     
